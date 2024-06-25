@@ -33,8 +33,9 @@ class _TabletDesktopHeroView extends StatelessWidget {
       child: Row(
         children: [
           // first container: hero title, description, action button
-          FadeInDown(
-            curve: Curves.bounceOut,
+          FadeInLeft(
+            curve: Curves.linear,
+            from: 200,
             duration: const Duration(milliseconds: 800),
             child: Container(
               width: MediaQuery.of(context).size.width*0.65,
@@ -81,10 +82,11 @@ class _TabletDesktopHeroView extends StatelessWidget {
             ),
           ),
           //second container: hero robot image
-          FadeInDown(
+          FadeInLeft(
             duration: const Duration(milliseconds: 800),
             delay: Durations.medium3,
-            //curve: Curves.bounceIn,
+
+            curve: Curves.bounceOut,
             child: Container(
               height: 400,
               width: MediaQuery.of(context).size.width*0.35,

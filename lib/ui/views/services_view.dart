@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 class ServicesView extends StatelessWidget {
@@ -8,21 +9,30 @@ class ServicesView extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      color: Color(0x2F2933),
+      color: Colors.grey.shade200,//Color(0x2F2933),
       child: FittedBox(
         fit: BoxFit.contain,
         alignment: Alignment.topCenter,
         child: Column(
           children: [
             SizedBox(height: 25,),
-            Text(
-              'Nuestros Servicios',
-              style: TextStyle(
-                fontSize: 30,
-              ),
-              ),
+            FadeIn(
+              duration: Duration(seconds: 1),
+              delay: Durations.extralong3,
+              //from:200,
+              child: Text(
+                'Nuestros Servicios',
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+                ),
+            ),
             SizedBox(height: 5,),
-            Container(width: 600,child: Text('Ofrecemos soluciones digitales innovadoras, desde aplicaciones móviles hasta desarrollo web y software de escritorio, adaptadas a tus necesidades.', style: TextStyle(fontSize: 15), textAlign: TextAlign.center,)),
+            FadeIn(
+              duration: Duration(seconds: 1),
+              delay: Durations.extralong4,
+              //from: 200,
+              child: Container(width: 600,child: Text('Ofrecemos soluciones digitales innovadoras, desde aplicaciones móviles hasta desarrollo web y software de escritorio, adaptadas a tus necesidades.', style: TextStyle(fontSize: 15), textAlign: TextAlign.center,))),
             SizedBox(height: 30,),
             
             Container(
