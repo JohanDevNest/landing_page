@@ -10,7 +10,7 @@ class CustomAppMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: ( _, constraints){
-        return (constraints.maxWidth > 905)
+        return (constraints.maxWidth > 1100)
                 ? _TabletDesktopMenu()
                 : MobileMenu();
       }
@@ -27,30 +27,40 @@ class _TabletDesktopMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric( horizontal: 20, vertical: 10),
+      decoration: BoxDecoration(color: Color(0xFF2F2933),border: Border(bottom: BorderSide(color: Color(0xFFFF6F61)))),
       width: double.infinity,
-      color: Color(0xFF2F2933),//Colors.green,//Color(0xFF2F2933),
+      //color: Color(0xFF2F2933),//Colors.green,//Color(0xFF2F2933),
       child: Row(
         children: [
           SizedBox(width: 80,),
-          Text('DevNest Innova', style: TextStyle(fontSize: 20, color: Colors.white),),
+          Image.network(
+            "assets/logo.png", 
+            width: 200,
+            height: 70,
+            fit: BoxFit.cover,
+
+          ),
           Spacer(),
           CustomFlatButton(
             text: 'Inicio', 
             // onPressed: () => Navigator.pushNamed(context, '/stateful'),
             onPressed: () {}, 
+            fontSize: 18,
             ),
           SizedBox(width: 10),
           CustomFlatButton(
             text: 'Acerca de nosotros', 
             // onPressed: () => Navigator.pushNamed(context, '/provider'), 
-            onPressed: () {}, 
+            onPressed: () {},
+            fontSize: 18,
   
             ),
           SizedBox(width: 10),
           CustomFlatButton(
             text: 'Servicios', 
             // onPressed: () => Navigator.pushNamed(context, '/abc123'),
-            onPressed: () {},  
+            onPressed: () {},
+            fontSize: 18,
             ),
           SizedBox(width: 10),
           CustomFlatButton(
@@ -58,6 +68,7 @@ class _TabletDesktopMenu extends StatelessWidget {
             // onPressed: () => Navigator.pushNamed(context, '/stateful/100'),
             onPressed: () {}, 
             backGroundColor: Color(0xFF6D11B4),
+            fontSize: 18,
             ),
           SizedBox(width: 10),
           CustomFlatButton(
@@ -112,7 +123,7 @@ class _MobileMenuState extends State<MobileMenu> with SingleTickerProviderStateM
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 10),
               width: 150,
-              height: isOpen ? 308 : 50,
+              height: isOpen ? 320 : 70,
               color: isOpen? Colors.white : Colors.transparent,
               child: Column(
                 children: [

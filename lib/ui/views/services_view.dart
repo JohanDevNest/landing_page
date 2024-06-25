@@ -45,28 +45,29 @@ class _ServicesCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          decoration: BoxDecoration(color: Color(0x33FF6F61), borderRadius: BorderRadius.all(Radius.circular(10))),
-          width: 180,
-          height: 230,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0),
-            child: Column(
-              children: [
-                Spacer(),
-                Icon(Icons.phone_android_outlined,size: 35,),
-                //SizedBox(height: 10,),
-                Spacer(),
-                Text('Aplicaciones Moviles', style: TextStyle(fontSize: 20,), textAlign: TextAlign.center,),
-                //SizedBox(height: 10,),
-                Spacer(),
-                Text('Creamos apps móviles personalizadas y funcionales', textAlign: TextAlign.center,),
-                //SizedBox(height: 10,)
-                Spacer(),                
-              ],
-            ),
-          ),
-        ),
+        // Container(
+        //   decoration: BoxDecoration(color: Color(0x33FF6F61), borderRadius: BorderRadius.all(Radius.circular(10))),
+        //   width: 180,
+        //   height: 230,
+        //   child: Padding(
+        //     padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        //     child: Column(
+        //       children: [
+        //         Spacer(),
+        //         Icon(Icons.phone_android_outlined,size: 35,),
+        //         //SizedBox(height: 10,),
+        //         Spacer(),
+        //         Text('Aplicaciones Moviles', style: TextStyle(fontSize: 20,), textAlign: TextAlign.center,),
+        //         //SizedBox(height: 10,),
+        //         Spacer(),
+        //         Text('Creamos apps móviles personalizadas y funcionales', textAlign: TextAlign.center,),
+        //         //SizedBox(height: 10,)
+        //         Spacer(),                
+        //       ],
+        //     ),
+        //   ),
+        // ),
+        AnimatedContainerExample(),
         SizedBox(width: 40,),
         Container(
           width: 180,
@@ -111,6 +112,68 @@ class _ServicesCard extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+
+class AnimatedContainerExample extends StatefulWidget {
+  @override
+  _AnimatedContainerExampleState createState() => _AnimatedContainerExampleState();
+}
+
+class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
+  bool _isHovered = false;
+
+  void _onEnter(PointerEvent details) {
+    setState(() {
+      _isHovered = true;
+    });
+  }
+
+  void _onExit(PointerEvent details) {
+    setState(() {
+      _isHovered = false;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      onEnter: _onEnter,
+      onExit: _onExit,
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+        decoration: BoxDecoration(
+          color: _isHovered ? Color(0x85FF6F61) : Color(0x33FF6F61),
+          borderRadius: BorderRadius.all(Radius.circular(_isHovered ? 15 : 10)),
+        ),
+        width: _isHovered ? 185 : 180,
+        height: _isHovered ? 235 : 230,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: Column(
+            children: [
+              Spacer(),
+              Icon(Icons.phone_android_outlined, size: 35),
+              Spacer(),
+              Text(
+                'Aplicaciones Moviles',
+                style: TextStyle(fontSize: 20),
+                textAlign: TextAlign.center,
+              ),
+              Spacer(),
+              Text(
+                'Creamos apps móviles personalizadas y funcionales',
+                textAlign: TextAlign.center,
+              ),
+              Spacer(),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

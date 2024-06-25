@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:landing_page/ui/shared/custom_app_menu.dart';
+import 'package:landing_page/ui/views/about_view.dart';
 import 'package:landing_page/ui/views/hero_view.dart';
 import 'package:landing_page/ui/views/services_view.dart';
 import 'package:landing_page/ui/views/why_view.dart';
@@ -19,16 +20,7 @@ class MainLayoutPage extends StatelessWidget {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 color: Colors.transparent,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 15.0),
-                  child: CustomAppMenu(),
-                ),
-                // child: MediaQuery.of(context).size.width > 520 ? CustomAppMenu() 
-                // : Row(
-                //   children: [ 
-                //     CustomAppMenu()
-                //   ],
-                // ) ,
+                child: CustomAppMenu(),
               ) 
             )
           ],
@@ -49,9 +41,8 @@ class _MainLayoutPage extends StatelessWidget {
       children: [
         HeroView(),
         ServicesView(),
-        ServicesView(),
-        WhyView()
-        
+        WhyView(),
+        AboutView()
       ],
     );
   }
