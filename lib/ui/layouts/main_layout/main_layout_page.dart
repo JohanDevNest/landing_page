@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:landing_page/ui/shared/custom_app_menu.dart';
-import 'package:landing_page/ui/layouts/main_layout/views/about_view.dart';
-import 'package:landing_page/ui/layouts/main_layout/views/hero_view.dart';
-import 'package:landing_page/ui/layouts/main_layout/views/services_view.dart';
-import 'package:landing_page/ui/layouts/main_layout/views/why_view.dart';
+import '../../shared/custom_app_menu.dart';
+import 'views/about_view.dart';
+import 'views/hero_view.dart';
+import 'views/services_view.dart';
+import 'views/why_view.dart';
 
 class MainLayoutPage extends StatelessWidget {
   const MainLayoutPage({super.key});

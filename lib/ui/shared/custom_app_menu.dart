@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:landing_page/ui/shared/custom_flat_button.dart';
-import 'package:landing_page/ui/shared/custom_menu_item.dart';
+import 'custom_flat_button.dart';
+import 'custom_menu_item.dart';
 
 class CustomAppMenu extends StatelessWidget {
   const CustomAppMenu({super.key});
@@ -66,7 +66,7 @@ class _TabletDesktopMenu extends StatelessWidget {
             text: 'Contactanos', 
             // onPressed: () => Navigator.pushNamed(context, '/stateful/100'),
             onPressed: () {}, 
-            backGroundColor: Color(0xFF6D11B4),
+            backGroundColor: const Color(0xFF6D11B4),
             fontSize: 18,
             ),
           const SizedBox(width: 10),
@@ -120,7 +120,7 @@ class _MobileMenuState extends State<MobileMenu> with SingleTickerProviderStateM
                 });
               },
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               width: 150,
               height: isOpen ? 320 : 70,
               color: isOpen? Colors.white : Colors.transparent,
@@ -161,17 +161,17 @@ class _MenuTitle extends StatelessWidget {
       height: 70,
       child: Row(
         children: [
-          SizedBox(width: 20,),
+          const SizedBox(width: 20,),
           Text('DevNestInnova',style: TextStyle(color: isOpen ? Colors.black : Colors.white, fontSize: 20),),
-          Spacer(),
+          const Spacer(),
           AnimatedContainer(
-            duration: Duration(milliseconds: 200),
+            duration: const Duration(milliseconds: 200),
             curve: Curves.easeInOut,
             width: isOpen ? 45 : 0,
           ),
           
           //Text('Menu', style: GoogleFonts.roboto( color: Colors.white, fontSize: 18)),
-          Spacer(),
+          const Spacer(),
           //Icon(Icons.menu, color: Colors.white,)
           AnimatedIcon(
             icon: AnimatedIcons.menu_close, 

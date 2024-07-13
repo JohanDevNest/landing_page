@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:landing_page/router/router.dart';
+import 'router/router.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
+  setPathUrlStrategy(); // importar url_strategy para quitar el /# del navegador
   runApp(const MyApp());
 }
 
