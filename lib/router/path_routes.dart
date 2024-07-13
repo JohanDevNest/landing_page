@@ -1,9 +1,12 @@
+
+
 class Routes {
   // Auth Router
 
   static const home = '/';
-  static const loginRoute = '/auth/login';
-  static const registerRoute = '/auth/register';
+  static const aboutUsView = '/about-us';
+  static const servicesRoute = '/services';
+  static const contactRoute = '/contact';
 
   // Dashboard
   static const dashboardRoute = '/dashboard';

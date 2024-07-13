@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AboutUsView extends StatelessWidget {
-  const AboutUsView({super.key});
+class ServicesView extends StatelessWidget {
+  const ServicesView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class AboutUsView extends StatelessWidget {
         // height: double.infinity,
         // width: double.infinity,
         child: Text(
-          'About Us',
+          'Services',
           style: TextStyle(fontSize: 50),
         ),
       ),

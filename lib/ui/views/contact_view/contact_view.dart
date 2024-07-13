@@ -1,7 +1,8 @@
+
 import 'package:flutter/material.dart';
 
-class AboutUsView extends StatelessWidget {
-  const AboutUsView({super.key});
+class ContactView extends StatelessWidget {
+  const ContactView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,7 @@ class AboutUsView extends StatelessWidget {
         // height: double.infinity,
         // width: double.infinity,
         child: Text(
-          'About Us',
+          'Contact',
           style: TextStyle(fontSize: 50),
         ),
       ),

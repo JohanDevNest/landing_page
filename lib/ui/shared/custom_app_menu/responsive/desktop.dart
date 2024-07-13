@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../router/path_routes.dart';
 import '../widgets/custom_flat_button.dart';
 
 class TabletDesktopMenu extends StatelessWidget {
@@ -38,7 +40,9 @@ class TabletDesktopMenu extends StatelessWidget {
           CustomFlatButton(
             text: 'Acerca de nosotros',
             // onPressed: () => Navigator.pushNamed(context, '/provider'),
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).go(Routes.aboutUsView);
+            },
             fontSize: 18,
           ),
           const SizedBox(width: 10),
