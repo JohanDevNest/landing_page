@@ -1,7 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'utils/gradient_text.dart';
+
 import '../../../shared/custom_flat_button.dart';
+import 'utils/gradient_text.dart';
 
 class HeroView extends StatelessWidget {
   const HeroView({super.key});
@@ -51,9 +52,9 @@ class _TabletDesktopHeroView extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          GradientText(
+                          const GradientText(
                             'Transformando ideas en soluciones digitales',
-                            gradient: const LinearGradient(
+                            gradient: LinearGradient(
                               colors: [
                                 Color(0xFFFCF2E6),
                                 Color(0xFFFF0088),
@@ -61,7 +62,7 @@ class _TabletDesktopHeroView extends StatelessWidget {
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                             ),
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 70,
                               fontWeight: FontWeight.bold,
                             ),
