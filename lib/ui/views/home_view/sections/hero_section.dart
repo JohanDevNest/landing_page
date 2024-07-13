@@ -1,11 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
-import '../../../shared/custom_flat_button.dart';
+import '../../../shared/custom_app_menu/widgets/custom_flat_button.dart';
 import 'utils/gradient_text.dart';
 
-class HeroView extends StatelessWidget {
-  const HeroView({super.key});
+class HeroSection extends StatelessWidget {
+  const HeroSection({super.key});
 
   @override
   Widget build(BuildContext context) {
