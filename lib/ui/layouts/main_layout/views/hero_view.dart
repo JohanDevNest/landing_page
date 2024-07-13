@@ -29,7 +29,8 @@ class _TabletDesktopHeroView extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      color: const Color(0xFF2F2933),
+      //color: const Color(0xFF2F2933),
+      color: const Color(0xFF141414),
       child: Row(
         children: [
           // first container: hero title, description, action button
@@ -68,20 +69,28 @@ class _TabletDesktopHeroView extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 20),
-                          const Text(
+                          const GradientText(
                             'Desde aplicaciones móviles intuitivas hasta plataformas web  y soluciones de escritorio eficientes, DevNest Innova transforma tus ideas en realidad.',
+                            gradient: LinearGradient(
+                              colors:[
+                                Color(0xFFFFC2EE),
+                                Color(0xFFFF0088),
+                              ],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight
+                              ),
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 22,
                             ),
-                            textAlign: TextAlign.start,
+                            //textAlign: TextAlign.start,
                           ),
                           const SizedBox(height: 30),
                           CustomFlatButton(
-                            text: 'Contactanos',
+                            text: 'Quiero una consulta gratuita',
                             onPressed: () {},
                             fontSize: 25,
-                            backGroundColor: const Color(0xFF6D11B4),
+                            backGroundColor: const Color(0xFF3E20E4),
                           ),
                         ],
                       ),
