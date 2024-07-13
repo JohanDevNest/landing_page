@@ -56,7 +56,7 @@ class _TabletDesktopHeroView extends StatelessWidget {
                             'Transformando ideas en soluciones digitales',
                             gradient: LinearGradient(
                               colors: [
-                                Color(0xFFFCF2E6),
+                                Color(0xFFFFC2EE),
                                 Color(0xFFFF0088),
                               ],
                               begin: Alignment.topLeft,
