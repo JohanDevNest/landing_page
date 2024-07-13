@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:landing_page/ui/shared/custom_flat_button.dart';
 import 'package:landing_page/ui/shared/custom_menu_item.dart';
 
@@ -11,8 +10,8 @@ class CustomAppMenu extends StatelessWidget {
     return LayoutBuilder(
       builder: ( _, constraints){
         return (constraints.maxWidth > 1100)
-                ? _TabletDesktopMenu()
-                : MobileMenu();
+                ? const _TabletDesktopMenu()
+                : const MobileMenu();
       }
       );
   }
@@ -26,13 +25,13 @@ class _TabletDesktopMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric( horizontal: 20, vertical: 10),
-      decoration: BoxDecoration(color: Color(0xFF2F2933),border: Border(bottom: BorderSide(color: Color(0xFFFF6F61)))),
+      padding: const EdgeInsets.symmetric( horizontal: 20, vertical: 10),
+      decoration: const BoxDecoration(color: Color(0xFF2F2933),border: Border(bottom: BorderSide(color: Color(0xFFFF6F61)))),
       width: double.infinity,
       //color: Color(0xFF2F2933),//Colors.green,//Color(0xFF2F2933),
       child: Row(
         children: [
-          SizedBox(width: 80,),
+          const SizedBox(width: 80,),
           Image.network(
             "assets/logo.png", 
             width: 200,
@@ -40,14 +39,14 @@ class _TabletDesktopMenu extends StatelessWidget {
             fit: BoxFit.cover,
 
           ),
-          Spacer(),
+          const Spacer(),
           CustomFlatButton(
             text: 'Inicio', 
             // onPressed: () => Navigator.pushNamed(context, '/stateful'),
             onPressed: () {}, 
             fontSize: 18,
             ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           CustomFlatButton(
             text: 'Acerca de nosotros', 
             // onPressed: () => Navigator.pushNamed(context, '/provider'), 
@@ -55,14 +54,14 @@ class _TabletDesktopMenu extends StatelessWidget {
             fontSize: 18,
   
             ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           CustomFlatButton(
             text: 'Servicios', 
             // onPressed: () => Navigator.pushNamed(context, '/abc123'),
             onPressed: () {},
             fontSize: 18,
             ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           CustomFlatButton(
             text: 'Contactanos', 
             // onPressed: () => Navigator.pushNamed(context, '/stateful/100'),
@@ -70,13 +69,13 @@ class _TabletDesktopMenu extends StatelessWidget {
             backGroundColor: Color(0xFF6D11B4),
             fontSize: 18,
             ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           CustomFlatButton(
             text: 'En', 
             // onPressed: () => Navigator.pushNamed(context, '/stateful/100'),
             onPressed: () {}, 
             ),
-          SizedBox(width: 50,)
+          const SizedBox(width: 50,)
         ],
       ),
     );
