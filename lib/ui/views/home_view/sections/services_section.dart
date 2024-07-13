@@ -1,8 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
-class ServicesView extends StatelessWidget {
-  const ServicesView({super.key});
+class ServicesSection extends StatelessWidget {
+  const ServicesSection({super.key});
 
   @override
   Widget build(BuildContext context) {

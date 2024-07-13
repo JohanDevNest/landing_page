@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class WhyView extends StatelessWidget {
-  const WhyView({super.key});
+class WhySection extends StatelessWidget {
+  const WhySection({super.key});
 
   @override
   Widget build(BuildContext context) {
