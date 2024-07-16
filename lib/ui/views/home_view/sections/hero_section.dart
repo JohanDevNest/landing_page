@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../shared/custom_app_menu/widgets/custom_flat_button.dart';
 import 'utils/gradient_text.dart';
@@ -30,7 +31,19 @@ class _TabletDesktopHeroView extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       //color: const Color(0xFF2F2933),
-      color: const Color(0xFF141414),
+      //color: const Color(0xFF141414),
+      decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.black,        // Color negro predominante
+                Colors.black87,      // Negro con un toque de transparencia
+                Colors.black87,      // Negro más claro
+                Colors.black,   // Gris oscuro
+              ],
+            ),
+          ),
       child: Row(
         children: [
           // first container: hero title, description, action button
@@ -53,9 +66,9 @@ class _TabletDesktopHeroView extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const GradientText(
+                           GradientText(
                             'Transformando ideas en soluciones digitales',
-                            gradient: LinearGradient(
+                            gradient: const LinearGradient(
                               colors: [
                                 Color(0xFFFFC2EE),
                                 Color(0xFFFF0088),
@@ -63,15 +76,19 @@ class _TabletDesktopHeroView extends StatelessWidget {
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                             ),
-                            style: TextStyle(
+                            // style: TextStyle(
+                            //   fontSize: 70,
+                            //   fontWeight: FontWeight.bold,
+                            // ),
+                            style: GoogleFonts.notoSerif(
                               fontSize: 70,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w300,
                             ),
                           ),
                           const SizedBox(height: 20),
-                          const GradientText(
+                           GradientText(
                             'Desde aplicaciones móviles intuitivas hasta plataformas web  y soluciones de escritorio eficientes, DevNest Innova transforma tus ideas en realidad.',
-                            gradient: LinearGradient(
+                            gradient: const LinearGradient(
                               colors:[
                                 Color(0xFFFFC2EE),
                                 Color(0xFFFF00B8),
@@ -79,9 +96,13 @@ class _TabletDesktopHeroView extends StatelessWidget {
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight
                               ),
-                            style: TextStyle(
-                              color: Colors.white,
+                            // style: TextStyle(
+                            //   color: Colors.white,
+                            //   fontSize: 22,
+                            // ),
+                            style: GoogleFonts.notoSans(
                               fontSize: 22,
+                              fontWeight: FontWeight.w400
                             ),
                             //textAlign: TextAlign.start,
                           ),
@@ -90,7 +111,7 @@ class _TabletDesktopHeroView extends StatelessWidget {
                             text: 'Quiero una consulta gratuita',
                             onPressed: () {},
                             fontSize: 20,
-                            backGroundColor: const Color(0xFF3E20E4),
+                            backGroundColor: const Color(0xFF6D11B4),//Color(0xFF3E20E4),
                             withIcon: true,
                           ),
                         ],

@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'utils/gradient_text.dart';
 
@@ -20,7 +21,7 @@ class ServicesSection extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(
-                height: 25,
+                height: 105,
               ),
               FadeIn(
                 duration: const Duration(seconds: 1),
@@ -29,11 +30,11 @@ class ServicesSection extends StatelessWidget {
                 child: Row(
             
                   children: [
-                     const SizedBox(
+                      SizedBox(
                        width: 500,
                        child:  GradientText(
                         'Descubre los servicios que tenemos para ti',
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors:[
                             Color(0xFFFFC2EE),
                             Color(0xFFFF00B8),
@@ -41,23 +42,27 @@ class ServicesSection extends StatelessWidget {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight
                           ),
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 52,
+                  
+                        style: GoogleFonts.poppins(
+                          fontSize: 52
                         ),
-                        //textAlign: TextAlign.start,
+                        
                                            ),
                      ),
                     FadeIn(
                       duration: const Duration(seconds: 1),
                       delay: Durations.extralong4,
                       //from: 200,
-                      child: const SizedBox(
-                        width: 400,
+                      child:  SizedBox(
+                        width: 490,
                         child: Text(
                           'Ofrecemos soluciones tecnológicas personalizadas que incluyen innovación, calidad y eficiencia en cada proyecto. Nuestro equipo se dedica a desarrollar aplicaciones y plataformas que se ajustan a tus necesidades específicas, asegurando resultados excepcionales y una experiencia de usuario superior.',
-                          style: TextStyle(fontSize: 20, color: Color(0xFFFBFBFB)),
-                          textAlign: TextAlign.center,
+                          //style: TextStyle(fontSize: 20, color: Color(0xFFFBFBFB)),
+                          style: GoogleFonts.notoSerifMalayalam(
+                            fontSize: 18,
+                            color: Color(0xFFFBFBFB)
+                          ),
+                          //textAlign: TextAlign.center,
                         ),
                       ),
                     ),
@@ -69,7 +74,7 @@ class ServicesSection extends StatelessWidget {
               ),
               
               const SizedBox(
-                height: 30,
+                height: 50,
               ),
               Container(
                 padding: const EdgeInsets.symmetric(
@@ -77,7 +82,30 @@ class ServicesSection extends StatelessWidget {
                   vertical: 30,
                 ),
                 child: const _ServicesCard(),
-              )
+              ),
+
+              const SizedBox(height: 70,),
+
+              OutlinedButton(
+                onPressed: () {
+                  // Acción del botón
+                },
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: Color(0xFFFF00B8), width: 2), // Color y grosor del borde
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30), // Radio del borde
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20), // Padding del botón
+                ),
+                child: Text(
+                  'Ver todos los servicios',
+                  style: TextStyle(
+                    color: Color(0xFFFF00B8), // Color del texto
+                    fontSize: 16, // Tamaño del texto
+                  ),
+                ),
+              ),
+              const SizedBox(height: 105,),
             ],
           ),
         ),
@@ -95,154 +123,29 @@ class _ServicesCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        // Container(
-        //   decoration: BoxDecoration(color: Color(0x33FF6F61), borderRadius: BorderRadius.all(Radius.circular(10))),
-        //   width: 180,
-        //   height: 230,
-        //   child: Padding(
-        //     padding: const EdgeInsets.symmetric(horizontal: 15.0),
-        //     child: Column(
-        //       children: [
-        //         Spacer(),
-        //         Icon(Icons.phone_android_outlined,size: 35,),
-        //         //SizedBox(height: 10,),
-        //         Spacer(),
-        //         Text('Aplicaciones Moviles', style: TextStyle(fontSize: 20,), textAlign: TextAlign.center,),
-        //         //SizedBox(height: 10,),
-        //         Spacer(),
-        //         Text('Creamos apps móviles personalizadas y funcionales', textAlign: TextAlign.center,),
-        //         //SizedBox(height: 10,)
-        //         Spacer(),
-        //       ],
-        //     ),
-        //   ),
-        // ),
-        const AnimatedContainerExample(title: 'Aplicaciones Moviles', info: 'Creamos apps móviles personalizadas y funcionales',),
+        
+        const AnimatedContainerExample(title: 'Aplicaciones Moviles', info: 'Creamos apps móviles personalizadas y funcionales', icon: Icons.smartphone_outlined,),
         const SizedBox(
           width: 40,
         ),
-        const AnimatedContainerExample(title: 'Desarrollo Web', info: 'Diseñamos sitios web robustos, atractivos y fáciles de usar',),
-        /* Container(
-          width: 180,
-          height: 230,
-          decoration:  BoxDecoration(
-            gradient: const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xFF000000), // Negro
-                  Color(0xFF181818), // Púrpura oscuro
-                ],
-                stops: [0.0, 1.0], // Puntos de parada del gradiente
-              ),
-            borderRadius: const BorderRadius.all(
-              Radius.circular(10),
-            ),
-            boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(1), // Color de la sombra
-                  offset: Offset(0, 4), // Desplazamiento X y Y
-                  blurRadius: 15, // Radio de desenfoque
-                  spreadRadius: 0, // Radio de expansión
-                ),
-              ],
-          ),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0),
-            child: Column(
-              children: [
-                Spacer(),
-                Icon(
-                  Icons.web,
-                  size: 35,
-                ),
-                Spacer(),
-                SizedBox(
-                  width: 100,
-                  child: Text(
-                    'Desarrollo Web',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Spacer(),
-                
-                Text(
-                  'Diseñamos sitios web robustos, atractivos y fáciles de usar',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white),
-                ),
-                Spacer(),
-              ],
-            ),
-          ),
-        ), */
+        const AnimatedContainerExample(title: 'Desarrollo Web', info: 'Diseñamos sitios web robustos, atractivos y fáciles de usar', icon: Icons.web,),
+        
         const SizedBox(
           width: 40,
         ),
-        AnimatedContainerExample(title: 'Aplicaciones de escritorio', info: 'Desarrollamos software de escritorio ágil y confiable')
-        /* Container(
-          width: 180,
-          height: 230,
-          decoration:  BoxDecoration(
-            gradient: const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xFF000000), // Negro
-                  Color(0xFF181818), // Púrpura oscuro
-                ],
-                stops: [0.0, 1.0], // Puntos de parada del gradiente
-              ),
-            borderRadius: const BorderRadius.all(
-              Radius.circular(10),
-            ),
-            boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(1), // Color de la sombra
-                  offset: Offset(0, 4), // Desplazamiento X y Y
-                  blurRadius: 15, // Radio de desenfoque
-                  spreadRadius: 0, // Radio de expansión
-                ),
-              ],
-          ),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Spacer(),
-                Icon(
-                  Icons.desktop_mac_outlined,
-                  size: 35,
-                ),
-                Spacer(),
-                Text(
-                  'Aplicaciones de escritorio',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                  textAlign: TextAlign.center,
-                ),
-                Spacer(),
-                Text(
-                  'Desarrollamos software de escritorio ágil y confiable',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white),
-                ),
-                Spacer(),
-              ],
-            ),
-          ),
-        ), */
+        AnimatedContainerExample(title: 'Aplicaciones de escritorio', info: 'Desarrollamos software de escritorio ágil y confiable', icon: Icons.desktop_windows_outlined,)
+        
       ],
     );
   }
 }
 
 class AnimatedContainerExample extends StatefulWidget {
-  const AnimatedContainerExample({super.key, required this.title, required this.info});
+  const AnimatedContainerExample({super.key, required this.title, required this.info, required this.icon});
 
   final String title;
   final String info;
+  final IconData icon;
 
   @override
   _AnimatedContainerExampleState createState() =>
@@ -285,6 +188,7 @@ class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
                 ],
                 stops: [0.0, 1.0], // Puntos de parada del gradiente
           ),
+          border: Border.all(color: Color(0xFF404040) ),
           boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(1), // Color de la sombra
@@ -295,38 +199,55 @@ class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
           ],
 
         ),
-        width: _isHovered ? 185 : 180,
+        width: _isHovered ? 205 : 200,
         height: _isHovered ? 235 : 230,
         child:  Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.0),
+          padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Spacer(),
               Container(
+                width: 48,
+                height: 48,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(5.0)),
                   color: Color.fromARGB(209, 241, 145, 214),
                 ),
                 child: Icon(
-                  Icons.phone_android_outlined,
+                  widget.icon,
                   size: 35,
                   color: Colors.black,
                 ),
               ),
+              SizedBox(height: 5.0,),
               Spacer(),
-              Text(
-                widget.title,
-                style: TextStyle(fontSize: 20, color: Colors.white),
-                textAlign: TextAlign.left,
+              SizedBox(
+                width: 130,
+                child: Text(
+                  widget.title,
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  
+                  textAlign: TextAlign.left,
+                ),
               ),
               Spacer(),
               Text(
                 widget.info,
                 textAlign: TextAlign.start,
-                style: TextStyle(color: Colors.white),
+                //style: TextStyle(color: Colors.white),
+                style: GoogleFonts.notoSerif(
+                    
+                    color: Colors.white
+                  ),
               ),
               Spacer(),
+              SizedBox(height: 5.0,),
+              Text(
+                'Read more',
+                style: TextStyle(color: Color(0xFF4F53C1)),
+              ),
+              Spacer()
             ],
           ),
         ),

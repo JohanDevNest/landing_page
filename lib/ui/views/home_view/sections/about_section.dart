@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});
@@ -12,9 +13,10 @@ class AboutSection extends StatelessWidget {
       child: FittedBox(
         fit: BoxFit.contain,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 150.0),
+          padding: const EdgeInsets.symmetric(horizontal: 70.0),
           child: Column(
             children: [
+              SizedBox(height: 80,),
               Row(
                 children: [
                   Container(
@@ -40,14 +42,19 @@ class AboutSection extends StatelessWidget {
                 ),
               ),
                   const SizedBox(width: 30),
-                  const Column(
+                    Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
                         width: 250,
                         child: Text('Impulsando tu negocio con tecnología de vanguardia',
-                          style: TextStyle(fontSize: 18, color: Colors.white),
+                          //style: TextStyle(fontSize: 18, color: Colors.white),
+                          style: GoogleFonts.notoSerif(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w300
+                          ),
                           textAlign: TextAlign.start,
                         ),
                       ),
@@ -59,10 +66,44 @@ class AboutSection extends StatelessWidget {
                         width: 300,
                         child: Text(
                           'Transformamos tus ideas en soluciones digitales innovadoras que optimizan tus procesos y potencian tu crecimiento. Colaboramos contigo para crear aplicaciones y plataformas que realmente marcan la diferencia.',
-                          style: TextStyle(fontSize: 12, color: Colors.white),
+                          //style: TextStyle(fontSize: 12, color: Colors.white),
+                          style: GoogleFonts.notoSerif(
+                            fontSize: 12,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w300
+                          ),
                           textAlign: TextAlign.start,
                         ),
                       ),
+                      SizedBox(height: 15,),
+
+                      OutlinedButton.icon(
+                      onPressed: () {
+                        // Acción del botón
+                      },
+                      style: OutlinedButton.styleFrom(
+                        backgroundColor: Color(0xFFFF00B8), // Color de fondo rosa
+                        side: BorderSide(color: Color(0xFFFF00B8), width: 2), // Color y grosor del borde
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30), // Radio del borde
+                        ),
+                        padding: EdgeInsets.symmetric(horizontal: 14, vertical: 5), // Padding del botón
+                      ),
+                      icon: Icon(
+                        Icons.arrow_forward, // Ícono de flecha
+                        color: Colors.white, // Color del ícono
+                        size: 14,
+                      ),
+                      iconAlignment: IconAlignment.end,
+                      label: Text(
+                        'Conócenos',
+                        style: TextStyle(
+                          color: Colors.white, // Color del texto
+                          fontSize: 12, // Tamaño del texto
+                        ),
+                      ),
+                    ),
+                       
                     ],
                   )
                 ],
@@ -71,14 +112,18 @@ class AboutSection extends StatelessWidget {
               Row(
                 children: [
                 
-                  const Column(
+                    Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
                         width: 250,
                         child: Text('Impulsando tu negocio con tecnología de vanguardia',
-                          style: TextStyle(fontSize: 18, color: Colors.white),
+                          style: GoogleFonts.notoSerif(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w300
+                          ),
                           textAlign: TextAlign.start,
                         ),
                       ),
@@ -90,10 +135,42 @@ class AboutSection extends StatelessWidget {
                         width: 300,
                         child: Text(
                           'Transformamos tus ideas en soluciones digitales innovadoras que optimizan tus procesos y potencian tu crecimiento. Colaboramos contigo para crear aplicaciones y plataformas que realmente marcan la diferencia.',
-                          style: TextStyle(fontSize: 12, color: Colors.white),
+                          style: GoogleFonts.notoSerif(
+                            fontSize: 12,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w300
+                          ),
                           textAlign: TextAlign.start,
                         ),
                       ),
+
+                      SizedBox(height: 15,),
+                      OutlinedButton.icon(
+                      onPressed: () {
+                        // Acción del botón
+                      },
+                      style: OutlinedButton.styleFrom(
+                        backgroundColor: Color(0xFFFF00B8), // Color de fondo rosa
+                        side: BorderSide(color: Color(0xFFFF00B8), width: 2), // Color y grosor del borde
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30), // Radio del borde
+                        ),
+                        padding: EdgeInsets.symmetric(horizontal: 14, vertical: 5), // Padding del botón
+                      ),
+                      icon: Icon(
+                        Icons.arrow_forward, // Ícono de flecha
+                        color: Colors.white, // Color del ícono
+                        size: 14,
+                      ),
+                      iconAlignment: IconAlignment.end,
+                      label: Text(
+                        'Descubre como',
+                        style: TextStyle(
+                          color: Colors.white, // Color del texto
+                          fontSize: 12, // Tamaño del texto
+                        ),
+                      ),
+                    ),
                     ],
                   ),
                   const SizedBox(width: 30),
@@ -112,7 +189,7 @@ class AboutSection extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(5.0),
                   child: Image.network(
-                    'assets/about_first.png',
+                    'assets/about_second.png',
                     width: 280,
                     height: 150,
                     fit: BoxFit.cover,
@@ -121,6 +198,7 @@ class AboutSection extends StatelessWidget {
               ),
                 ],
               ),
+              SizedBox(height: 80,)
             ],
           ),
         ),
