@@ -8,6 +8,7 @@ class CustomFlatButton extends StatelessWidget {
     required this.onPressed,
     this.backGroundColor = Colors.transparent,
     this.fontSize = 15,
+    this.withIcon = false,
   });
 
   final String text;
@@ -15,6 +16,7 @@ class CustomFlatButton extends StatelessWidget {
   final Function onPressed;
   final Color backGroundColor;
   final double fontSize;
+  final bool withIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +29,20 @@ class CustomFlatButton extends StatelessWidget {
         onPressed: () => onPressed(),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: Text(
-            text,
-            style: TextStyle(fontSize: fontSize),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                text,
+                style: TextStyle(fontSize: fontSize),
+              ),
+              withIcon ? SizedBox(width: 15.0,) : SizedBox(width: 0.0,),
+              
+              withIcon ? Icon(
+                    Icons.arrow_forward,
+                    color: Colors.white,
+              ) : SizedBox(width: 0.0,)
+            ],
           ),
         ));
   }

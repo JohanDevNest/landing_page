@@ -74,7 +74,7 @@ class _TabletDesktopHeroView extends StatelessWidget {
                             gradient: LinearGradient(
                               colors:[
                                 Color(0xFFFFC2EE),
-                                Color(0xFFFF0088),
+                                Color(0xFFFF00B8),
                               ],
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight
@@ -89,8 +89,9 @@ class _TabletDesktopHeroView extends StatelessWidget {
                           CustomFlatButton(
                             text: 'Quiero una consulta gratuita',
                             onPressed: () {},
-                            fontSize: 25,
+                            fontSize: 20,
                             backGroundColor: const Color(0xFF3E20E4),
+                            withIcon: true,
                           ),
                         ],
                       ),
