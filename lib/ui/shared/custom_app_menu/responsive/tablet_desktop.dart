@@ -14,7 +14,11 @@ class TabletDesktopMenu extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: const BoxDecoration(
-          color: Color(0xFF2F2933),
+          //color: Color(0xFF2F2933),
+          //color: Colors.black,
+          color: Color(0xFF141414),
+          
+          
           border: Border(bottom: BorderSide(color: Color(0xFFFF6F61)))),
       width: double.infinity,
       //color: Color(0xFF2F2933),//Colors.green,//Color(0xFF2F2933),
@@ -24,8 +28,8 @@ class TabletDesktopMenu extends StatelessWidget {
             width: 80,
           ),
           Image.network(
-            "assets/logo.png",
-            width: 200,
+            "assets/logodevnest.png",
+            width: 150,
             height: 70,
             fit: BoxFit.cover,
           ),
