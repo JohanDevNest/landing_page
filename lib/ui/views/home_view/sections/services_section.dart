@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
+import 'utils/gradient_text.dart';
+
 class ServicesSection extends StatelessWidget {
   const ServicesSection({super.key});
 
@@ -9,53 +11,75 @@ class ServicesSection extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      color: Colors.grey.shade200, //Color(0x2F2933),
+      color: Color(0xFF141414), //Color(0x2F2933),
       child: FittedBox(
         fit: BoxFit.contain,
         alignment: Alignment.topCenter,
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 25,
-            ),
-            FadeIn(
-              duration: const Duration(seconds: 1),
-              delay: Durations.extralong3,
-              //from:200,
-              child: const Text(
-                'Nuestros Servicios',
-                style: TextStyle(
-                  fontSize: 30,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 180.0),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 25,
+              ),
+              FadeIn(
+                duration: const Duration(seconds: 1),
+                delay: Durations.extralong3,
+                //from:200,
+                child: Row(
+            
+                  children: [
+                     const SizedBox(
+                       width: 500,
+                       child:  GradientText(
+                        'Descubre los servicios que tenemos para ti',
+                        gradient: LinearGradient(
+                          colors:[
+                            Color(0xFFFFC2EE),
+                            Color(0xFFFF00B8),
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight
+                          ),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 52,
+                        ),
+                        //textAlign: TextAlign.start,
+                                           ),
+                     ),
+                    FadeIn(
+                      duration: const Duration(seconds: 1),
+                      delay: Durations.extralong4,
+                      //from: 200,
+                      child: const SizedBox(
+                        width: 400,
+                        child: Text(
+                          'Ofrecemos soluciones tecnológicas personalizadas que incluyen innovación, calidad y eficiencia en cada proyecto. Nuestro equipo se dedica a desarrollar aplicaciones y plataformas que se ajustan a tus necesidades específicas, asegurando resultados excepcionales y una experiencia de usuario superior.',
+                          style: TextStyle(fontSize: 20, color: Color(0xFFFBFBFB)),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            FadeIn(
-              duration: const Duration(seconds: 1),
-              delay: Durations.extralong4,
-              //from: 200,
-              child: const SizedBox(
-                width: 600,
-                child: Text(
-                  'Ofrecemos soluciones digitales innovadoras, desde aplicaciones móviles hasta desarrollo web y software de escritorio, adaptadas a tus necesidades.',
-                  style: TextStyle(fontSize: 15),
-                  textAlign: TextAlign.center,
+              const SizedBox(
+                height: 5,
+              ),
+              
+              const SizedBox(
+                height: 30,
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 80,
+                  vertical: 30,
                 ),
-              ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 80,
-                vertical: 30,
-              ),
-              child: const _ServicesCard(),
-            )
-          ],
+                child: const _ServicesCard(),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -93,18 +117,35 @@ class _ServicesCard extends StatelessWidget {
         //     ),
         //   ),
         // ),
-        const AnimatedContainerExample(),
+        const AnimatedContainerExample(title: 'Aplicaciones Moviles', info: 'Creamos apps móviles personalizadas y funcionales',),
         const SizedBox(
           width: 40,
         ),
-        Container(
+        const AnimatedContainerExample(title: 'Desarrollo Web', info: 'Diseñamos sitios web robustos, atractivos y fáciles de usar',),
+        /* Container(
           width: 180,
           height: 230,
-          decoration: const BoxDecoration(
-            color: Color(0x236D11B4),
-            borderRadius: BorderRadius.all(
+          decoration:  BoxDecoration(
+            gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFF000000), // Negro
+                  Color(0xFF181818), // Púrpura oscuro
+                ],
+                stops: [0.0, 1.0], // Puntos de parada del gradiente
+              ),
+            borderRadius: const BorderRadius.all(
               Radius.circular(10),
             ),
+            boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(1), // Color de la sombra
+                  offset: Offset(0, 4), // Desplazamiento X y Y
+                  blurRadius: 15, // Radio de desenfoque
+                  spreadRadius: 0, // Radio de expansión
+                ),
+              ],
           ),
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 15.0),
@@ -115,36 +156,56 @@ class _ServicesCard extends StatelessWidget {
                   Icons.web,
                   size: 35,
                 ),
-                //SizedBox(height: 10,),
                 Spacer(),
                 SizedBox(
                   width: 100,
                   child: Text(
                     'Desarrollo Web',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20, color: Colors.white),
                     textAlign: TextAlign.center,
                   ),
                 ),
                 Spacer(),
-                //SizedBox(height: 10,),
+                
                 Text(
                   'Diseñamos sitios web robustos, atractivos y fáciles de usar',
                   textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white),
                 ),
                 Spacer(),
               ],
             ),
           ),
-        ),
+        ), */
         const SizedBox(
           width: 40,
         ),
-        Container(
+        AnimatedContainerExample(title: 'Aplicaciones de escritorio', info: 'Desarrollamos software de escritorio ágil y confiable')
+        /* Container(
           width: 180,
           height: 230,
-          decoration: const BoxDecoration(
-              color: Color(0x23FFC107),
-              borderRadius: BorderRadius.all(Radius.circular(10))),
+          decoration:  BoxDecoration(
+            gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFF000000), // Negro
+                  Color(0xFF181818), // Púrpura oscuro
+                ],
+                stops: [0.0, 1.0], // Puntos de parada del gradiente
+              ),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(10),
+            ),
+            boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(1), // Color de la sombra
+                  offset: Offset(0, 4), // Desplazamiento X y Y
+                  blurRadius: 15, // Radio de desenfoque
+                  spreadRadius: 0, // Radio de expansión
+                ),
+              ],
+          ),
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 15.0),
             child: Column(
@@ -158,26 +219,30 @@ class _ServicesCard extends StatelessWidget {
                 Spacer(),
                 Text(
                   'Aplicaciones de escritorio',
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                   textAlign: TextAlign.center,
                 ),
                 Spacer(),
                 Text(
                   'Desarrollamos software de escritorio ágil y confiable',
                   textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white),
                 ),
                 Spacer(),
               ],
             ),
           ),
-        ),
+        ), */
       ],
     );
   }
 }
 
 class AnimatedContainerExample extends StatefulWidget {
-  const AnimatedContainerExample({super.key});
+  const AnimatedContainerExample({super.key, required this.title, required this.info});
+
+  final String title;
+  final String info;
 
   @override
   _AnimatedContainerExampleState createState() =>
@@ -209,30 +274,57 @@ class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
         duration: const Duration(milliseconds: 500),
         curve: Curves.easeInOut,
         decoration: BoxDecoration(
-          color: _isHovered ? const Color(0x85FF6F61) : const Color(0x33FF6F61),
+          //color: _isHovered ? Color.fromARGB(133, 184, 56, 45) : const Color(0xFF000000),
           borderRadius: BorderRadius.all(Radius.circular(_isHovered ? 15 : 10)),
+          gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFF000000), // Negro
+                  Color(0xFF181818), // Púrpura oscuro
+                ],
+                stops: [0.0, 1.0], // Puntos de parada del gradiente
+          ),
+          boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(1), // Color de la sombra
+                  offset: Offset(0, 4), // Desplazamiento X y Y
+                  blurRadius: 15, // Radio de desenfoque
+                  spreadRadius: 0, // Radio de expansión
+                ),
+          ],
+
         ),
         width: _isHovered ? 185 : 180,
         height: _isHovered ? 235 : 230,
-        child: const Padding(
+        child:  Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Spacer(),
-              Icon(
-                Icons.phone_android_outlined,
-                size: 35,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  color: Color.fromARGB(209, 241, 145, 214),
+                ),
+                child: Icon(
+                  Icons.phone_android_outlined,
+                  size: 35,
+                  color: Colors.black,
+                ),
               ),
               Spacer(),
               Text(
-                'Aplicaciones Moviles',
-                style: TextStyle(fontSize: 20),
-                textAlign: TextAlign.center,
+                widget.title,
+                style: TextStyle(fontSize: 20, color: Colors.white),
+                textAlign: TextAlign.left,
               ),
               Spacer(),
               Text(
-                'Creamos apps móviles personalizadas y funcionales',
-                textAlign: TextAlign.center,
+                widget.info,
+                textAlign: TextAlign.start,
+                style: TextStyle(color: Colors.white),
               ),
               Spacer(),
             ],
