@@ -156,7 +156,7 @@ class FooterSection extends StatelessWidget {
                   ),
                   SizedBox(height: 4.0),
                   Text(
-                    '+57 313 241 9278',
+                    '+57 310 282 5418',
                     style: GoogleFonts.notoSerif(
                       fontSize: 14,
                       color: Color(0xFFCACACA),

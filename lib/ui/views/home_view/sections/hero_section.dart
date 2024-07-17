@@ -30,24 +30,22 @@ class _TabletDesktopHeroView extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      //color: const Color(0xFF2F2933),
-      //color: const Color(0xFF141414),
-      decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Colors.black,        // Color negro predominante
-                Colors.black87,      // Negro con un toque de transparencia
-                Colors.black87,      // Negro más claro
-                Colors.black,   // Gris oscuro
-              ],
-            ),
-          ),
+      decoration: const BoxDecoration(
+        gradient:  LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.black,        // Color negro predominante
+            Colors.black87,      // Negro con un toque de transparencia
+            Colors.black87,      // Negro más claro
+            Colors.black,   // Gris oscuro
+          ],
+        ),
+      ),
       child: Row(
         children: [
           // first container: hero title, description, action button
-          FadeInLeft(
+          FadeInUp(
             curve: Curves.linear,
             from: 200,
             duration: const Duration(milliseconds: 800),
@@ -76,10 +74,6 @@ class _TabletDesktopHeroView extends StatelessWidget {
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                             ),
-                            // style: TextStyle(
-                            //   fontSize: 70,
-                            //   fontWeight: FontWeight.bold,
-                            // ),
                             style: GoogleFonts.notoSerif(
                               fontSize: 70,
                               fontWeight: FontWeight.w300,
@@ -96,22 +90,17 @@ class _TabletDesktopHeroView extends StatelessWidget {
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight
                               ),
-                            // style: TextStyle(
-                            //   color: Colors.white,
-                            //   fontSize: 22,
-                            // ),
                             style: GoogleFonts.notoSans(
                               fontSize: 22,
                               fontWeight: FontWeight.w400
                             ),
-                            //textAlign: TextAlign.start,
                           ),
                           const SizedBox(height: 30),
                           CustomFlatButton(
                             text: 'Quiero una consulta gratuita',
                             onPressed: () {},
                             fontSize: 20,
-                            backGroundColor: const Color(0xFF6D11B4),//Color(0xFF3E20E4),
+                            backGroundColor: const Color(0xFF6D11B4),
                             withIcon: true,
                           ),
                         ],
@@ -123,7 +112,7 @@ class _TabletDesktopHeroView extends StatelessWidget {
             ),
           ),
           //second container: hero robot image
-          FadeInLeft(
+          FadeInUp(
             duration: const Duration(milliseconds: 800),
             delay: Durations.medium3,
             curve: Curves.bounceOut,
