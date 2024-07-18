@@ -21,7 +21,7 @@ class OutlinedButtonCustom extends StatelessWidget {
             text,
             style: const TextStyle(
               color: Color(0xFFFF00B8), // Color del texto
-              fontSize: 16, // Tamaño del texto
+              fontSize: 22, // Tamaño del texto
             ),
           ),
         );

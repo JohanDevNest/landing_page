@@ -20,7 +20,7 @@ class ServicesSection extends StatelessWidget {
         fit: BoxFit.contain,
         alignment: Alignment.topCenter,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 180.0),
+          padding: const EdgeInsets.symmetric(horizontal: 120.0),
           child: Column(
             children: [
               verticalSpacing(105),
@@ -28,9 +28,12 @@ class ServicesSection extends StatelessWidget {
                 duration: const Duration(seconds: 1),
                 delay: Durations.extralong3,
                 child: Row(
+                  //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                       SizedBox(
-                       width: 500,
+                       width: 600,
+                       height: 300,
+                       //color: Colors.blue,
                        child:  GradientText(
                         'Descubre los servicios que tenemos para ti',
                         gradient: const LinearGradient(
@@ -43,21 +46,27 @@ class ServicesSection extends StatelessWidget {
                           ),
                   
                         style: GoogleFonts.poppins(
-                          fontSize: 52
+                          fontSize: 74
                         ),
                       ),
                      ),
+                    horizontalSpacing(60),
                     FadeInUp(
                       duration: const Duration(seconds: 1),
                       delay: Durations.extralong4,
                       //from: 200,
                       child:  SizedBox(
-                        width: 490,
-                        child: Text(
-                          'Ofrecemos soluciones tecnológicas personalizadas que incluyen innovación, calidad y eficiencia en cada proyecto. Nuestro equipo se dedica a desarrollar aplicaciones y plataformas que se ajustan a tus necesidades específicas, asegurando resultados excepcionales y una experiencia de usuario superior.',
-                          style: GoogleFonts.notoSerifMalayalam(
-                            fontSize: 18,
-                            color: Color(0xFFFBFBFB)
+                        width: 705,
+                        height: 270,
+                        //color: Colors.red,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 40),
+                          child: Text(
+                            'Ofrecemos soluciones tecnológicas personalizadas que incluyen innovación, calidad y eficiencia en cada proyecto. Nuestro equipo se dedica a desarrollar aplicaciones y plataformas que se ajustan a tus necesidades específicas, asegurando resultados excepcionales y una experiencia de usuario superior.',
+                            style: GoogleFonts.notoSerifMalayalam(
+                              fontSize: 26,
+                              color: Color(0xFFFBFBFB)
+                            ),
                           ),
                         ),
                       ),
@@ -66,7 +75,7 @@ class ServicesSection extends StatelessWidget {
                 ),
               ),
 
-              verticalSpacing(55),
+              verticalSpacing(130),
               
               Container(
                 padding: const EdgeInsets.symmetric( horizontal: 80, vertical: 30),
