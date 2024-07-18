@@ -61,8 +61,10 @@ class _ServicesContainerState extends State<ServicesContainer> {
           ],
 
         ),
-        width: _isHovered ? 205 : 200,
-        height: _isHovered ? 235 : 230,
+        //width: _isHovered ? 205 : 200,
+        //height: _isHovered ? 235 : 230,
+        width: _isHovered ? 285 : 280,
+        height: _isHovered ? 315 :310,
         child:  Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
           child: Column(
@@ -85,10 +87,13 @@ class _ServicesContainerState extends State<ServicesContainer> {
               SizedBox(height: 5.0,),
               Spacer(),
               SizedBox(
-                width: 130,
+                width: 190,
                 child: Text(
                   widget.title,
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: GoogleFonts.notoSerif(
+                    fontSize: 30, 
+                    color: Colors.white
+                  ),
                   
                   textAlign: TextAlign.left,
                 ),
@@ -98,14 +103,19 @@ class _ServicesContainerState extends State<ServicesContainer> {
                 widget.info,
                 textAlign: TextAlign.start,
                 style: GoogleFonts.notoSerif(
-                    color: Colors.white
+                    color: Colors.white,
+                    fontSize: 20
+                  
                   ),
               ),
               Spacer(),
               SizedBox(height: 5.0,),
               Text(
                 'Read more',
-                style: TextStyle(color: Color(0xFF4F53C1)),
+                style: GoogleFonts.notoSerif(
+                  color: Color(0xFF4F53C1),
+                  fontSize: 20
+                )
               ),
               Spacer()
             ],
