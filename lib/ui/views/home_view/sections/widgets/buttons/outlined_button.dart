@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class OutlinedButtonCustom extends StatelessWidget {
-  const OutlinedButtonCustom({super.key, required this.text});
+  const OutlinedButtonCustom({super.key, required this.text, required this.fontSize});
   final String text;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +16,14 @@ class OutlinedButtonCustom extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30), // Radio del borde
             ),
-            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20), // Padding del botón
+            //padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20), // Padding del botón
+            padding: EdgeInsets.all(25)
           ),
           child:  Text(
             text,
-            style: const TextStyle(
+            style:  TextStyle(
               color: Color(0xFFFF00B8), // Color del texto
-              fontSize: 22, // Tamaño del texto
+              fontSize: fontSize, // Tamaño del texto
             ),
           ),
         );

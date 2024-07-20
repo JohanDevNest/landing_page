@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class CustomFlatButton extends StatelessWidget {
-  const CustomFlatButton({
+import '../../utils/spacing.dart';
+
+class CustomizedIconButton extends StatelessWidget {
+   const CustomizedIconButton({
     super.key,
     required this.text,
     this.color = Colors.white,
@@ -23,14 +25,14 @@ class CustomFlatButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
+      onPressed: () => onPressed(),
         style: TextButton.styleFrom(
             foregroundColor: color,
             backgroundColor: backGroundColor,
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10)))),
-        onPressed: () => onPressed(),
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.symmetric(vertical: 3.0),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -38,15 +40,17 @@ class CustomFlatButton extends StatelessWidget {
                 text,
                 style: TextStyle(fontSize: fontSize),
               ),
-              withIcon ? SizedBox(width: 15.0,) : SizedBox(width: 0.0,),
+              withIcon ? horizontalSpacing(10.0) : horizontalSpacing(0),
               
               withIcon ? Icon(
                     Icons.arrow_forward,
                     color: Colors.white,
                     size: iconSize,
-              ) : SizedBox(width: 0.0,)
+              ) : horizontalSpacing(0)
             ],
           ),
         ));
   }
 }
+
+

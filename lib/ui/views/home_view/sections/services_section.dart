@@ -28,12 +28,10 @@ class ServicesSection extends StatelessWidget {
                 duration: const Duration(seconds: 1),
                 delay: Durations.extralong3,
                 child: Row(
-                  //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                       SizedBox(
                        width: 600,
                        height: 300,
-                       //color: Colors.blue,
                        child:  GradientText(
                         'Descubre los servicios que tenemos para ti',
                         gradient: const LinearGradient(
@@ -44,21 +42,18 @@ class ServicesSection extends StatelessWidget {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight
                           ),
-                  
                         style: GoogleFonts.poppins(
                           fontSize: 74
                         ),
                       ),
-                     ),
+                    ),
                     horizontalSpacing(60),
                     FadeInUp(
                       duration: const Duration(seconds: 1),
                       delay: Durations.extralong4,
-                      //from: 200,
                       child:  SizedBox(
                         width: 705,
                         height: 270,
-                        //color: Colors.red,
                         child: Padding(
                           padding: const EdgeInsets.only(top: 40),
                           child: Text(
@@ -74,24 +69,21 @@ class ServicesSection extends StatelessWidget {
                   ],
                 ),
               ),
-
               verticalSpacing(130),
-              
               Container(
                 padding: const EdgeInsets.symmetric( horizontal: 80, vertical: 30),
-                child:  Row(
-                          children: [
-                            const ServicesContainer(title: 'Aplicaciones Moviles', info: 'Creamos apps móviles personalizadas y funcionales', icon: Icons.smartphone_outlined,),
-                            horizontalSpacing(40),
-                            const ServicesContainer(title: 'Desarrollo Web', info: 'Diseñamos sitios web robustos, atractivos y fáciles de usar', icon: Icons.web,),
-                            horizontalSpacing(40),
-                            const ServicesContainer(title: 'Aplicaciones de escritorio', info: 'Desarrollamos software de escritorio ágil y confiable', icon: Icons.desktop_windows_outlined,)
-                          ],
-                        )
+                child: Row(
+                        children:[
+                          const ServicesContainer(title: 'Aplicaciones Moviles', info: 'Creamos apps móviles personalizadas y funcionales', svgPath: "assets/icons/mobile.svg",),
+                          horizontalSpacing(40),
+                          const ServicesContainer(title: 'Desarrollo Web', info: 'Diseñamos sitios web robustos, atractivos y fáciles de usar', svgPath: "assets/icons/web.svg",),
+                          horizontalSpacing(40),
+                          const ServicesContainer(title: 'Aplicaciones de escritorio', info: 'Desarrollamos software de escritorio ágil y confiable', svgPath: "assets/icons/desktop.svg",)
+                        ],
+                      )
               ),
-
               verticalSpacing(70),
-              const OutlinedButtonCustom(text: 'Ver todos los servicios'),
+              const OutlinedButtonCustom(text: 'Ver todos los servicios', fontSize: 30,),
               verticalSpacing(105),
             ],
           ),
