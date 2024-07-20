@@ -119,40 +119,6 @@ class AboutSection extends StatelessWidget {
           ),
         ),
         verticalSpacing(15),
-        // OutlinedButton.icon(
-        //   onPressed: () {
-        //     // Acción del botón
-        //   },
-        //   style: OutlinedButton.styleFrom(
-        //     backgroundColor: const Color(0xFFFF00B8), // Color de fondo rosa
-        //     side: const BorderSide(color: Color(0xFFFF00B8), width: 2), // Color y grosor del borde
-        //     shape: RoundedRectangleBorder(
-        //       borderRadius: BorderRadius.circular(30), // Radio del borde
-        //     ),
-        //     padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 5), // Padding del botón
-        //   ),
-        //   icon: const Icon(
-        //     Icons.arrow_forward, // Ícono de flecha
-        //     color: Colors.white, // Color del ícono
-        //     size: 14,
-        //   ),
-        //   iconAlignment: IconAlignment.end,
-        //   label: Text(
-        //     buttonText,
-        //     style: const TextStyle(
-        //       color: Colors.white, // Color del texto
-        //       fontSize: 18, // Tamaño del texto
-        //     ),
-        //   ),
-        // ),
-        // CustomFlatButton(
-        //   text: buttonText,
-        //   onPressed: () {},
-        //   fontSize: 15,
-        //   backGroundColor: const Color(0xFFFF00B8),
-        //   withIcon: true,
-        //   iconSize: 18,
-        // ),
         CustomizedIconButton(
           text: buttonText, 
           onPressed: (){},

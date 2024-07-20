@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'sections/description_section.dart';
+import 'sections/hero_section.dart';
+
 class AboutUsView extends StatelessWidget {
   const AboutUsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const UnderConstructionPage();
+    return ListView(
+        scrollDirection: Axis.vertical,
+        children: const [
+          AboutHeroSection(),
+          DescriptionSection(),
+        ],
+      );
   }
 }
 
