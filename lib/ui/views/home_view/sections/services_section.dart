@@ -2,8 +2,8 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../shared/custom_app_menu/utils/spacing.dart';
 import 'utils/gradient_text.dart';
-import 'utils/spacing.dart';
 import 'widgets/buttons/outlined_button.dart';
 import 'widgets/services_container.dart';
 

@@ -2,12 +2,29 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../home_view/sections/footer_section.dart';
+import 'sections/contact_form_section.dart';
+
 class ContactView extends StatelessWidget {
   const ContactView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const UnderConstructionPage();
+    return ListView(
+        scrollDirection: Axis.vertical,
+        children:  [
+          ContactFormSection(),
+          Container(
+            height: 30,
+            
+            decoration: BoxDecoration(
+              border: Border.all(color: Color(0xFF141414)),
+              color: Color(0xFF141414)
+            ),
+          ),
+          FooterSection(),
+        ],
+      );
   }
 }
 

@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'sections/description_section.dart';
 import 'sections/hero_section.dart';
+import 'sections/location_section.dart';
 
 class AboutUsView extends StatelessWidget {
   const AboutUsView({super.key});
@@ -14,6 +15,7 @@ class AboutUsView extends StatelessWidget {
         children: const [
           AboutHeroSection(),
           DescriptionSection(),
+          LocationSection(),
         ],
       );
   }
