@@ -2,31 +2,37 @@ import 'package:flutter/material.dart';
 
 import '../../shared/custom_app_menu/custom_app_menu.dart';
 
+class MainLayoutPage extends StatefulWidget {
+  final Widget child;
 
-class MainLayoutPage extends StatelessWidget {
   const MainLayoutPage({
     super.key,
     required this.child,
   });
 
-  final Widget child; 
+  @override
+  MainLayoutPageState createState() => MainLayoutPageState();
+}
+
+class MainLayoutPageState extends State<MainLayoutPage> {
+  double _scrollPosition = 0.0;
+
+  void updateScrollPosition(double position) {
+    setState(() {
+      _scrollPosition = position;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Stack(
-          children: [
-            child,
-            Positioned(
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                color: Colors.transparent,
-                child: const CustomAppMenu(),
-              ),
-            )
-          ],
-        ),
+      body: Stack(
+        children: [
+          widget.child,
+          Positioned(
+            child: CustomAppMenu(scrollPosition: _scrollPosition),
+          ),
+        ],
       ),
     );
   }

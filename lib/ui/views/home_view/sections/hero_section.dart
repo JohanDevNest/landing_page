@@ -18,7 +18,7 @@ class HeroSection extends StatelessWidget {
   }
 }
 
-//TABLET AND DESKTOP VIEW FOR DEVICES > 905PX
+//TABLET AND DESKTOP VIEW FOR DEVICES > 1100PX
 
 class _TabletDesktopHeroView extends StatelessWidget {
   const _TabletDesktopHeroView({
@@ -56,7 +56,7 @@ class _TabletDesktopHeroView extends StatelessWidget {
                 children: [
                   Positioned(
                     top: 140,
-                    left: 90,
+                    left: 80,
                     child: SizedBox(
                       height: 500.0,
                       width: MediaQuery.of(context).size.width * 0.60,
@@ -114,7 +114,7 @@ class _TabletDesktopHeroView extends StatelessWidget {
           //second container: hero robot image
           FadeInUp(
             duration: const Duration(milliseconds: 800),
-            delay: Durations.medium3,
+            //delay: Durations.medium3,
             curve: Curves.bounceOut,
             child: SizedBox(
               height: 400,
@@ -136,7 +136,7 @@ class _TabletDesktopHeroView extends StatelessWidget {
   }
 }
 
-//MOBILE VIEW FOR DEVICES < 905PX
+//MOBILE VIEW FOR DEVICES < 1100PX
 
 class _MobileHeroView extends StatelessWidget {
   const _MobileHeroView({

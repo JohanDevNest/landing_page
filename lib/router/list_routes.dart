@@ -11,10 +11,9 @@ final listRoutes = [
   GoRoute(
     path: Routes.home,
     pageBuilder: (context, state) {
-      // key: state.pageKey;
-      return const NoTransitionPage(
+      return NoTransitionPage(
         child: MainLayoutPage(
-          child: HomeView(),
+          child: const HomeView(),
         ),
       );
     },
@@ -22,10 +21,9 @@ final listRoutes = [
   GoRoute(
     path: Routes.aboutUsView,
     pageBuilder: (context, state) {
-      // key: state.pageKey;
-      return const NoTransitionPage(
+      return NoTransitionPage(
         child: MainLayoutPage(
-          child: AboutUsView(),
+          child: const AboutUsView(),
         ),
       );
     },
@@ -33,10 +31,9 @@ final listRoutes = [
   GoRoute(
     path: Routes.servicesRoute,
     pageBuilder: (context, state) {
-      // key: state.pageKey;
-      return const NoTransitionPage(
+      return NoTransitionPage(
         child: MainLayoutPage(
-          child: ServicesView(),
+          child: const ServicesView(),
         ),
       );
     },
@@ -44,10 +41,9 @@ final listRoutes = [
   GoRoute(
     path: Routes.contactRoute,
     pageBuilder: (context, state) {
-      // key: state.pageKey;
-      return const NoTransitionPage(
+      return NoTransitionPage(
         child: MainLayoutPage(
-          child: ContactView(),
+          child: const ContactView(),
         ),
       );
     },

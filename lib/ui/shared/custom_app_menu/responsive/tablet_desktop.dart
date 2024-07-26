@@ -5,28 +5,27 @@ import '../../../../router/path_routes.dart';
 import '../widgets/custom_flat_button.dart';
 
 class TabletDesktopMenu extends StatelessWidget {
+  final double scrollPosition;
+
   const TabletDesktopMenu({
     super.key,
+    required this.scrollPosition,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    Color backgroundColor = scrollPosition > 50 ? Color(0xFF191919) : Colors.transparent;
+
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 500),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      decoration: const BoxDecoration(
-          //color: Color(0xFF2F2933),
-          //color: Colors.black,
-          color: Color(0xFF141414),
-          
-          
-      border: Border(bottom: BorderSide(color: Color(0xFFFF6F61)))),
+      decoration: BoxDecoration(
+        color: backgroundColor,
+      ),
       width: double.infinity,
-      //color: Color(0xFF2F2933),//Colors.green,//Color(0xFF2F2933),
       child: Row(
         children: [
-          const SizedBox(
-            width: 80,
-          ),
+          const SizedBox(width: 80),
           Image.network(
             "assets/logodevnest.png",
             width: 150,
@@ -36,49 +35,30 @@ class TabletDesktopMenu extends StatelessWidget {
           const Spacer(),
           CustomFlatButton(
             text: 'Inicio',
-            // onPressed: () => Navigator.pushNamed(context, '/stateful'),
-            onPressed: () {
-               GoRouter.of(context).go(Routes.home);
-            },
+            onPressed: () => GoRouter.of(context).go(Routes.home),
             fontSize: 18,
           ),
           const SizedBox(width: 10),
           CustomFlatButton(
             text: 'Acerca de nosotros',
-            // onPressed: () => Navigator.pushNamed(context, '/provider'),
-            onPressed: () {
-              GoRouter.of(context).go(Routes.aboutUsView);
-            },
+            onPressed: () => GoRouter.of(context).go(Routes.aboutUsView),
             fontSize: 18,
           ),
           const SizedBox(width: 10),
           CustomFlatButton(
             text: 'Servicios',
-            // onPressed: () => Navigator.pushNamed(context, '/abc123'),
-            onPressed: () {
-              GoRouter.of(context).go(Routes.servicesRoute);
-            },
+            onPressed: () => GoRouter.of(context).go(Routes.servicesRoute),
             fontSize: 18,
           ),
           const SizedBox(width: 10),
           CustomFlatButton(
             text: 'Contactanos',
-            // onPressed: () => Navigator.pushNamed(context, '/stateful/100'),
-            onPressed: () {
-                 GoRouter.of(context).go(Routes.contactRoute);
-            },
+            onPressed: () => GoRouter.of(context).go(Routes.contactRoute),
             backGroundColor: const Color(0xFF6D11B4),
             fontSize: 18,
           ),
           const SizedBox(width: 10),
-          // CustomFlatButton(
-          //   text: 'En',
-          //   // onPressed: () => Navigator.pushNamed(context, '/stateful/100'),
-          //   onPressed: () {},
-          // ),
-          const SizedBox(
-            width: 50,
-          )
+          const SizedBox(width: 50),
         ],
       ),
     );

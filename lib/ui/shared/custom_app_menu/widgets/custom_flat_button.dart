@@ -7,8 +7,9 @@ class CustomFlatButton extends StatelessWidget {
     this.color = Colors.white,
     required this.onPressed,
     this.backGroundColor = Colors.transparent,
-    this.fontSize = 15,
+    this.fontSize = 15.0,
     this.withIcon = false,
+    this.iconSize = 24.0, 
   });
 
   final String text;
@@ -17,6 +18,7 @@ class CustomFlatButton extends StatelessWidget {
   final Color backGroundColor;
   final double fontSize;
   final bool withIcon;
+  final double iconSize;
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +43,7 @@ class CustomFlatButton extends StatelessWidget {
               withIcon ? Icon(
                     Icons.arrow_forward,
                     color: Colors.white,
+                    size: iconSize,
               ) : SizedBox(width: 0.0,)
             ],
           ),
