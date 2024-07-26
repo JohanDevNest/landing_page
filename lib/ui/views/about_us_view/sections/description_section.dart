@@ -12,7 +12,7 @@ class DescriptionSection extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      color: Colors.blue,//Color(0xFF141414),
+      color: Color(0xFF141414),
       child: FittedBox(
         fit: BoxFit.contain,
         child: Center(
