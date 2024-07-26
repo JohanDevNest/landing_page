@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'sections/desktop_service.dart';
+import 'sections/hero_section.dart';
+import 'sections/mobile_service.dart';
+import 'sections/web_service.dart';
+
+
 class ServicesView extends StatelessWidget {
   const ServicesView({super.key});
 
 
   @override
   Widget build(BuildContext context) {
-    return const UnderConstructionPage();
+    return ListView(
+        scrollDirection: Axis.vertical,
+        children: const [
+          ServicesHeroSection(),
+          MobileService(),
+          DesktopService(),
+          WebService(),
+
+        ],
+      );
   }
 }
 
