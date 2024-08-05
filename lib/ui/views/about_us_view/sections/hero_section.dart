@@ -40,6 +40,7 @@ class _TabletDesktopHeroView extends StatelessWidget {
             Colors.black87,      // Negro más claro
             Colors.black,   // Gris oscuro
           ],
+          stops: [0.0, 0.5, 0.5, 1.0],
         ),
       ),
       child: Center(

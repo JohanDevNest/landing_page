@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'sections/description_section.dart';
 import 'sections/hero_section.dart';
 import 'sections/location_section.dart';
+import 'sections/our_team.dart';
 
 class AboutUsView extends StatelessWidget {
   const AboutUsView({super.key});
@@ -16,6 +17,8 @@ class AboutUsView extends StatelessWidget {
           AboutHeroSection(),
           DescriptionSection(),
           LocationSection(),
+          OurTeam(),
+          //SharedValues(),
         ],
       );
   }

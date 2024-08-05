@@ -11,24 +11,34 @@ class LocationSection extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      color: Color(0xFF141414),
-      child: FittedBox(
-        fit: BoxFit.contain,
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.black,
+            Colors.black87,
+            Colors.black87,
+            Colors.black,
+          ],
+          stops: [0.0, 0.5, 0.5, 1.0],
+        ),
+      ),
+      child: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Center(
-            child: _buildRow(
-              imageUrl: 'assets/bogota.jpg', 
-              title: 'Construido en Colombia', 
-              firstDescription: 'Originalmente conocida por su rica herencia cultural y producción de café, Colombia se ha transformado en uno de los centros de tecnología e innovación de más rápido crecimiento en América Latina.', 
-              secondDescription: 'Fundada y con sede en Colombia, DevNest Innova prospera dentro de la vibrante comunidad de jóvenes empresas innovadoras que crecen en el país.'
-              ),
+          child: _buildRow(
+            imageUrl: 'assets/bogota.jpg',
+            title: 'Construido en Colombia',
+            firstDescription:
+                'Originalmente conocida por su rica herencia cultural y producción de café, Colombia se ha transformado en uno de los centros de tecnología e innovación de más rápido crecimiento en América Latina.',
+            secondDescription:
+                'Fundada y con sede en Colombia, DevNest Innova prospera dentro de la vibrante comunidad de jóvenes empresas innovadoras que crecen en el país.',
           ),
         ),
-      )
+      ),
     );
   }
-
 
   Widget _buildRow({
     required String imageUrl,
@@ -41,34 +51,37 @@ class LocationSection extends StatelessWidget {
     Widget textWidget = _buildTextSection(title, firstDescription, secondDescription);
 
     List<Widget> children = reverse
-        ? [textWidget, const SizedBox(width: 150), imageWidget]
-        : [imageWidget, const SizedBox(width: 150), textWidget];
+        ? [textWidget, const SizedBox(width: 70), imageWidget]
+        : [imageWidget, const SizedBox(width: 70), textWidget];
 
     return Row(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: children,
     );
   }
 
   Widget _buildImage(String imageUrl) {
-    return Container(
+    return AnimatedContainer(
+      duration: Duration(seconds: 1),
+      curve: Curves.easeInOut,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 10,
-            offset: Offset(0, 3),
+            color: Colors.black.withOpacity(0.7),
+            spreadRadius: 4,
+            blurRadius: 20,
+            offset: Offset(0, 8),
           ),
         ],
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(5.0),
+        borderRadius: BorderRadius.circular(20.0),
         child: Image.network(
           imageUrl,
           width: 480,
-          height: 250,
+          height: 300,
           fit: BoxFit.cover,
         ),
       ),
@@ -80,47 +93,50 @@ class LocationSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
+        Text(
+          title,
+          style: GoogleFonts.notoSerif(
+            fontSize: 36,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            shadows: [
+              Shadow(
+                offset: Offset(2.0, 2.0),
+                blurRadius: 3.0,
+                color: Colors.black54,
+              ),
+            ],
+          ),
+          textAlign: TextAlign.start,
+        ),
+        verticalSpacing(20),
+        Container(
           width: 500,
           child: Text(
-            title,
+            firstDescription,
             style: GoogleFonts.notoSerif(
-              fontSize: 34,
-              color: Colors.white,
+              fontSize: 18,
+              color: Colors.white70,
               fontWeight: FontWeight.w300,
+              height: 1.5,
             ),
             textAlign: TextAlign.start,
           ),
         ),
-        verticalSpacing(10),
-        SizedBox(
-          width: 600,
-          child: Column(
-            children: [
-              Text(
-                firstDescription,
-                style: GoogleFonts.notoSerif(
-                  fontSize: 18,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w300,
-                ),
-                textAlign: TextAlign.start,
-              ),
-              verticalSpacing(5.0),
-              Text(
-                secondDescription,
-                style: GoogleFonts.notoSerif(
-                  fontSize: 18,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w300,
-                ),
-                textAlign: TextAlign.start,
-              ),
-            ],
-          ),
-
-        ),
         verticalSpacing(15),
+        Container(
+          width: 500,
+          child: Text(
+            secondDescription,
+            style: GoogleFonts.notoSerif(
+              fontSize: 18,
+              color: Colors.white70,
+              fontWeight: FontWeight.w300,
+              height: 1.5,
+            ),
+            textAlign: TextAlign.start,
+          ),
+        ),
       ],
     );
   }

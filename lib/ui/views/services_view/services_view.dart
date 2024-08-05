@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'sections/banner.dart';
 import 'sections/desktop_service.dart';
 import 'sections/hero_section.dart';
 import 'sections/mobile_service.dart';
+import 'sections/mobile_steps.dart';
 import 'sections/web_service.dart';
 
 
@@ -15,11 +17,14 @@ class ServicesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
         scrollDirection: Axis.vertical,
-        children: const [
+        children:  [
           ServicesHeroSection(),
           MobileService(),
           DesktopService(),
           WebService(),
+          MobileSteps(),
+          BannerServices(),
+          
 
         ],
       );
