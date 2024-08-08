@@ -11,19 +11,7 @@ class WebService extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [
-            Colors.black,
-            Colors.black87,
-            Colors.black87,
-            Colors.black,
-          ],
-          stops: [0.0, 0.5, 0.5, 1.0],
-        ),
-      ),
+      
       child: Column(
         children: [
           verticalSpacing(50),
@@ -32,7 +20,9 @@ class WebService extends StatelessWidget {
             description: 'DevNest Innova ofrece una gama completa de servicios de desarrollo y mantenimiento de aplicaciones web para todas las plataformas principales, asegurando soluciones robustas y escalables.',
           ),
           verticalSpacing(10),
-          Divider(color: Colors.white),
+          Container(
+            width: MediaQuery.of(context).size.width*0.95,
+            child: Divider(color: Colors.white)),
           verticalSpacing(10),
           Expanded(
             child: FittedBox(

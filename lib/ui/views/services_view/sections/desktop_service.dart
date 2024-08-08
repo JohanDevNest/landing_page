@@ -11,19 +11,7 @@ class DesktopService extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      decoration: const BoxDecoration(
-        gradient:  LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Colors.black,        // Color negro predominante
-            Colors.black87,      // Negro con un toque de transparencia
-            Colors.black87,      // Negro más claro
-            Colors.black,   // Gris oscuro
-          ],
-          stops: [0.0, 0.5, 0.5, 1.0],
-        ),
-      ),
+      
       child: Column(
         children: [
           verticalSpacing(50),
@@ -33,7 +21,9 @@ class DesktopService extends StatelessWidget {
           ),
 
           verticalSpacing(10),
-          Divider(color: Colors.white),
+          Container(
+            width: MediaQuery.of(context).size.width*0.95,
+            child: Divider(color: Colors.white)),
           verticalSpacing(10),
 
           Expanded(

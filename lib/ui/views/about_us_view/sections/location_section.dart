@@ -9,33 +9,58 @@ class LocationSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width*0.95,
       height: MediaQuery.of(context).size.height,
       decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Colors.black,
-            Colors.black87,
-            Colors.black87,
-            Colors.black,
-          ],
-          stops: [0.0, 0.5, 0.5, 1.0],
-        ),
+          border: Border(
+            top: BorderSide(
+              color: Colors.white
+            ),
+            bottom: BorderSide(
+              color: Colors.white
+            )
+          ),     
+         //color: const Color(0xFF191919),
       ),
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: _buildRow(
-            imageUrl: 'assets/bogota.jpg',
-            title: 'Construido en Colombia',
-            firstDescription:
-                'Originalmente conocida por su rica herencia cultural y producción de café, Colombia se ha transformado en uno de los centros de tecnología e innovación de más rápido crecimiento en América Latina.',
-            secondDescription:
-                'Fundada y con sede en Colombia, DevNest Innova prospera dentro de la vibrante comunidad de jóvenes empresas innovadoras que crecen en el país.',
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            
+            padding: const EdgeInsets.only(left: 10.0),
+            child: Text(
+                'De donde venimos',
+                style: GoogleFonts.poppins(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  shadows: [
+                    Shadow(
+                      offset: Offset(2.0, 2.0),
+                      blurRadius: 3.0,
+                      color: Colors.black54,
+                    ),
+                  ],
+                ),
+              ),
           ),
-        ),
+          
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: _buildRow(
+                imageUrl: 'assets/bogota.jpg',
+                title: 'Construido en Colombia',
+                firstDescription:
+                    'Originalmente conocida por su rica herencia cultural y producción de café, Colombia se ha transformado en uno de los centros de tecnología e innovación de más rápido crecimiento en América Latina.',
+                secondDescription:
+                    'Fundada y con sede en Colombia, DevNest Innova prospera dentro de la vibrante comunidad de jóvenes empresas innovadoras que crecen en el país.',
+              ),
+            ),
+          ),
+          SizedBox()
+        ],
       ),
     );
   }

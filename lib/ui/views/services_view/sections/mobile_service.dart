@@ -33,7 +33,9 @@ class MobileService extends StatelessWidget {
           ),
 
           verticalSpacing(10),
-          Divider(color: Colors.white),
+          Container(
+            width: MediaQuery.of(context).size.width*0.95,
+            child: Divider(color: Colors.white)),
           verticalSpacing(10),
 
           Expanded(

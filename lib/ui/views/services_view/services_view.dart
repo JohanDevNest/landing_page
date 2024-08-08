@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'sections/banner.dart';
-import 'sections/desktop_service.dart';
+import '../../shared/custom_app_menu/utils/spacing.dart';
+import 'sections/desktop.dart';
 import 'sections/hero_section.dart';
-import 'sections/mobile_service.dart';
-import 'sections/mobile_steps.dart';
-import 'sections/web_service.dart';
+import 'sections/mobile.dart';
+import 'sections/web.dart';
 
 
 class ServicesView extends StatelessWidget {
@@ -18,12 +17,25 @@ class ServicesView extends StatelessWidget {
     return ListView(
         scrollDirection: Axis.vertical,
         children:  [
-          ServicesHeroSection(),
-          MobileService(),
-          DesktopService(),
-          WebService(),
-          MobileSteps(),
-          BannerServices(),
+          Container(
+            color: const Color(0xFF1A1A1A),
+            child: Column(
+              children: [
+                ServicesHeroSection(),
+                Mobile(),
+                verticalSpacing(150),
+                Web(),
+                verticalSpacing(150),
+                Desktop(),
+                //MobileService(),
+                //DesktopService(),
+                //WebService(),
+                //MobileSteps(),
+                //BannerServices(),
+              ],
+            ),
+          )
+          
           
 
         ],

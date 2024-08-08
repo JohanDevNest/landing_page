@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../shared/custom_app_menu/utils/spacing.dart';
+
 class OurTeam extends StatelessWidget {
   const OurTeam({super.key});
 
@@ -9,44 +11,35 @@ class OurTeam extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [
-            Colors.black,
-            Colors.black87,
-            Colors.black87,
-            Colors.black,
-          ],
-          stops: [0.0, 0.5, 0.5, 1.0],
-        ),
-      ),
+     
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Meet the Team',
-              style: GoogleFonts.notoSerif(
-                fontSize: 42,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFFFF00B8),
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0),
+              child: Text(
+                'Conoce el equipo',
+                style: GoogleFonts.poppins(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFFFF00B8),
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
-            SizedBox(height: 40),
+            verticalSpacing(200),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 _buildTeamInfoCard('10', 'Desarrolladores'),
                 _buildTeamInfoCard('5', 'Diseñadores'),
-                _buildTeamInfoCard('20', 'Proyectos completados'),
+                _buildTeamInfoCard('20', 'Proyectos'),
               ],
             ),
-            SizedBox(height: 60),
+            verticalSpacing(80),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30.0),
               child: Text(
@@ -69,10 +62,11 @@ class OurTeam extends StatelessWidget {
   Widget _buildTeamInfoCard(String number, String title) {
     return Container(
       padding: EdgeInsets.all(40.0),
+      width: 250,
       decoration: BoxDecoration(
         color: Colors.black.withOpacity(0.5),
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
+        boxShadow: const[
           BoxShadow(
             color: Colors.black54,
             blurRadius: 5.0,

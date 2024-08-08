@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'sections/description_section.dart';
 import 'sections/hero_section.dart';
+import 'sections/introduction_section.dart';
 import 'sections/location_section.dart';
 import 'sections/our_team.dart';
 
@@ -13,11 +14,21 @@ class AboutUsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
         scrollDirection: Axis.vertical,
-        children: const [
-          AboutHeroSection(),
-          DescriptionSection(),
-          LocationSection(),
-          OurTeam(),
+        children:  [
+          Container(
+            color: const Color(0xFF1A1A1A),
+            
+            child: Column(
+              children: [
+                  AboutHeroSection(),
+                  IntroductionSection(),
+                  DescriptionSection(),
+                  LocationSection(),
+                  OurTeam(),
+              ],
+            ),
+          )
+          
           //SharedValues(),
         ],
       );
